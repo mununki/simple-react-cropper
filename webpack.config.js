@@ -6,6 +6,10 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 });
 module.exports = {
   entry: path.join(__dirname, "example/src/index.js"),
+  output: {
+    path: path.join(__dirname, "example/dist"),
+    filename: "simple-react-cropper.js"
+  },
   module: {
     rules: [
       {

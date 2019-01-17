@@ -1,6 +1,6 @@
 # Simple-React-Cropper
 
-### Demo:
+### [Demo](https://mattdamon108.github.io/simple-react-cropper/)
 
 This is the tiny and simple image cropper & resizer based on [Cropper.js](https://fengyuanchen.github.io/cropperjs/). Simply it is wrapped to React Component to allow to use more easily in React project.
 
