@@ -1,0 +1,50 @@
+{
+  "name": "simple-react-cropper",
+  "version": "1.0.5",
+  "description": "Simple React image cropper with cropper.js",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist lib .cache",
+    "start": "webpack-dev-server --mode development",
+    "transpile": "babel src -d dist --copy-files",
+    "prepublishOnly": "yarn transpile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattdamon108/simple-react-cropper.git"
+  },
+  "author": "moondaddi <woonki.moon@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattdamon108/simple-react-cropper/issues"
+  },
+  "homepage": "https://github.com/mattdamon108/simple-react-cropper#readme",
+  "dependencies": {
+    "cropperjs": "^1.4.3"
+  },
+  "peerDependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "cssnano": "^4.1.8",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "path": "^0.12.7",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
