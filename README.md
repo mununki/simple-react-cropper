@@ -12,6 +12,16 @@ There are many functions of Cropper.js but this module is simplified with main f
 2. Handle the cropped and resized images with function props.
 3. Style the container of crop canvas.
 
+### Install
+
+```shell
+$ npm i simple-react-cropper
+
+# or
+
+$ yarn add simple-react-cropper
+```
+
 ### Example
 
 ```javascript
