@@ -2,6 +2,8 @@
 
 ### [Demo](https://mattdamon108.github.io/simple-react-cropper/)
 
+[![npm version](https://badge.fury.io/js/simple-react-cropper.svg)](https://badge.fury.io/js/simple-react-cropper)
+
 This is the tiny and simple image cropper & resizer based on [Cropper.js](https://fengyuanchen.github.io/cropperjs/). Simply it is wrapped to React Component to allow to use more easily in React project.
 
 There are many functions of Cropper.js but this module is simplified with main features in purpose of avatar image crop & resize in most user-profile web page.
