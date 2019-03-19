@@ -10,7 +10,7 @@
     "transpile": "babel src -d dist --copy-files",
     "build": "webpack --mode production",
     "deploy": "gh-pages -d example/dist",
-    "publish-demo": "npm run build && npm run deploy",
+    "publish-demo": "yarn build && yarn deploy",
     "prepublishOnly": "yarn transpile"
   },
   "repository": {
