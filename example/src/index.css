@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  background-color: lightgrey;
+}
+.container {
+  max-width: 900px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.container > div {
+  flex: 1;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0.5rem 0.5rem 1rem grey;
+}
