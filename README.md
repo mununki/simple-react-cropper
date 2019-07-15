@@ -65,13 +65,14 @@ ReactDOM.render(<Root />, document.getElementById("root"));
 
 ### Props
 
-| Props          | Type     | Default   | Descriptioin                                                             |
-| -------------- | -------- | --------- | ------------------------------------------------------------------------ |
-| aspectRatio    | number   | NaN       | Define the fixed crop box ratio. By default, the crop box has free ratio |
-| width          | number   | 500       | The width of output image                                                |
-| height         | number   | 500       | The height of output image                                               |
-| upload         | function | undefined | The function to handle the output (blob type)                            |
-| afterCrop      | function | undefined | The function to be called after confirming cropping                      |
-| containerStyle | object   | undefined | JSX style object to style the parent container                           |
+| Props          | Type                | required | Default   | Descriptioin                                                             |
+| -------------- | ------------------- | -------- | --------- | ------------------------------------------------------------------------ |
+| aspectRatio    | number              | true     | NaN       | Define the fixed crop box ratio. By default, the crop box has free ratio |
+| width          | number              | false    | 500       | The width of output image                                                |
+| height         | number              | false    | 500       | The height of output image                                               |
+| upload         | function            | true     | undefined | The function to handle the output (blob type)                            |
+| afterCrop      | function            | false    | undefined | The function to be called after confirming cropping                      |
+| fillColor      | string              | false    | "#FFF"    | The color to be filled in blank area after crop                          |
+| containerStyle | React.CSSProperties | false    | undefined | The object to style the parent container                                 |
 
 
