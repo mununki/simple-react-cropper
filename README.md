@@ -13,6 +13,7 @@ There are many functions of Cropper.js but this module is simplified with main f
 1. Crop and Resize the images in Web canvas (powered by [Cropper.js](https://fengyuanchen.github.io/cropperjs/)).
 2. Handle the cropped and resized images with function props.
 3. Style the container of crop canvas.
+4. **Typescript support**
 
 ### Install
 
@@ -40,21 +41,14 @@ const afterCrop = () => {
 };
 
 const Root = () => (
-  <div>
+  <div className="container-demo">
     <Cropper
       aspectRatio={4 / 4}
       width={500}
       height={500}
       upload={uploadToServer}
       afterCrop={afterCrop}
-      containerStyle={{
-        marginTop: "1rem",
-        maxHeight: "50vh",
-        minHeight: "50vh",
-        padding: "1rem",
-        overflow: "hidden",
-        textAlign: "center"
-      }}
+      containerStyle={{ maxHeight: "80vh", borderRadius: "10px" }}
     />
   </div>
 );
