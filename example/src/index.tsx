@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Cropper from "../../src/component/simple-react-cropper";
+import Cropper from "../../src";
 import "./index.css";
 
-const uploadToServer = blob => {
+const uploadToServer = (blob: Blob) => {
   console.log(blob);
 };
 
@@ -12,18 +12,14 @@ const afterCrop = () => {
 };
 
 const Root = () => (
-  <div className="container">
+  <div className="container-demo">
     <Cropper
       aspectRatio={4 / 4}
       width={500}
       height={500}
       upload={uploadToServer}
       afterCrop={afterCrop}
-      containerStyle={{
-        margin: "1rem",
-        overflow: "hidden",
-        textAlign: "center"
-      }}
+      containerStyle={{ maxHeight: "80vh", borderRadius: "10px" }}
     />
   </div>
 );
