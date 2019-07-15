@@ -1,3 +1,13 @@
+.container {
+  background-color: white;
+  padding: 1rem;
+}
+
+.container-img {
+  width: 100%;
+  text-align: center;
+}
+
 .input-file {
   width: 0.1px;
   height: 0.1px;
@@ -6,6 +16,7 @@
   position: absolute;
   z-index: -1;
 }
+
 .input-file + label {
   font-size: 1em;
   margin: 0px;
@@ -16,10 +27,12 @@
   border-radius: 5px;
   border-bottom: 3px solid #5490a8;
 }
+
 .input-file + label:hover {
   background-color: #5490a8;
   cursor: pointer;
 }
+
 .button-save {
   font-size: 1em;
   padding: 10px 20px 10px 20px;
@@ -29,6 +42,7 @@
   border-radius: 5px;
   border-bottom: 3px solid #5490a8;
 }
+
 .button-save:hover {
   background-color: #5490a8;
   cursor: pointer;

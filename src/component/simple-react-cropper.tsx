@@ -4,15 +4,32 @@ import "cropperjs/dist/cropper.css";
 import "../static/css/simple-react-cropper.css";
 import dummy from "../static/img/dummy.png";
 
-class SimpleReactCropper extends React.Component {
+export interface IPropsSimpleReactCropper {
+  aspectRatio: number;
+  width?: number;
+  height?: number;
+  fillColor?: string;
+  upload: (file: Blob) => void;
+  afterCrop?: () => void;
+  containerStyle?: React.CSSProperties;
+}
+
+class SimpleReactCropper extends React.Component<IPropsSimpleReactCropper, { src: any }> {
+  private cropper: any;
+  private img: any;
+
   state = {
     src: dummy
   };
-  _initCropper = () => {
+
+  componentDidMount() {
     this.cropper = new Cropper(this.img, {
-      aspectRatio: this.props.aspectRatio
+      viewMode: 1,
+      aspectRatio: this.props.aspectRatio,
+      zoomable: false
     });
-  };
+  }
+
   _uploadToServer = () => {
     this.cropper
       .getCroppedCanvas({
@@ -22,24 +39,25 @@ class SimpleReactCropper extends React.Component {
         minHeight: 0,
         maxWidth: 1024,
         maxHeight: 1024,
-        fillColor: "#fff",
+        fillColor: this.props.fillColor || "#fff",
         imageSmoothingEnabled: true,
         imageSmoothingQuality: "high"
       })
-      .toBlob(blob => {
+      .toBlob((blob: Blob) => {
         this.props.upload(blob);
       });
     if (this.props.afterCrop) this.props.afterCrop();
   };
-  _handleFileChange = e => {
-    this._initCropper();
+
+  _handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+
     const {
-      target: {
-        validity,
-        files: [file]
-      }
+      target: { validity, files }
     } = e;
-    if (validity.valid) {
+
+    if (validity.valid && files) {
       const reader = new FileReader();
       reader.onload = () => {
         this.setState({ src: reader.result });
@@ -48,24 +66,21 @@ class SimpleReactCropper extends React.Component {
           .clear()
           .replace(reader.result);
       };
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(files[0]);
     }
   };
+
   render() {
     return (
-      <div>
-        <div style={this.props.containerStyle}>
-          <img
-            ref={node => (this.img = node)}
-            src={this.state.src}
-            style={{ maxWidth: "100%" }}
-          />
+      <div className="container">
+        <div className="container-img" style={this.props.containerStyle}>
+          <img ref={node => (this.img = node)} id="avatar_img" src={this.state.src} />
         </div>
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
-            marginTop: "1rem"
+            paddingTop: "1rem"
           }}
         >
           <input
