@@ -1,7 +1,11 @@
 src
+demo
 example
 yarn.lock
 yarn-error.log
 .gitignore
 .babelrc
-.webpack.config.js
+webpack.config.js
+.prettierrc.json
+server.js
+tsconfig.json

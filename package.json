@@ -1,17 +1,18 @@
 {
   "name": "simple-react-cropper",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "description": "Simple React image cropper with cropper.js",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist lib .cache",
     "start": "webpack-dev-server --mode development",
-    "transpile": "babel src -d dist --copy-files",
+    "transpile": "rm -rf dist && cd src && tsc && copy ./types/* ../dist/ && copy ./static/**/* ../dist/",
     "build": "webpack --mode production",
-    "deploy": "gh-pages -d example/dist",
-    "publish-demo": "yarn build && yarn deploy",
-    "prepublishOnly": "yarn transpile"
+    "deploy": "gh-pages -d demo",
+    "publish-demo": "npm run build && npm run deploy",
+    "prepublishOnly": "npm run transpile",
+    "server": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,8 @@
     "@babel/plugin-proposal-class-properties": "^7.2.3",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.4",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
@@ -47,8 +50,11 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+    "webpack-hot-middleware": "^2.25.0"
   }
 }

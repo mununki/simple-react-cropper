@@ -5,16 +5,22 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
   filename: "./index.html"
 });
 module.exports = {
-  entry: path.join(__dirname, "example/src/index.js"),
+  entry: { app: [path.join(__dirname, "example/src/index.tsx")] },
   output: {
-    path: path.join(__dirname, "example/dist"),
-    filename: "simple-react-cropper.js"
+    path: path.join(__dirname, "demo"),
+    filename: "[name].bundle.js",
+    publicPath: "/"
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         use: "babel-loader",
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(ts|tsx)?$/,
+        use: "ts-loader",
         exclude: /node_modules/
       },
       {
@@ -29,7 +35,7 @@ module.exports = {
   },
   plugins: [htmlWebpackPlugin],
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: [".js", ".jsx", ".ts", ".tsx"]
   },
   devServer: {
     port: 3001
