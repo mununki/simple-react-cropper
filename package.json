@@ -1,6 +1,6 @@
 {
   "name": "simple-react-cropper",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Simple React image cropper with cropper.js",
   "main": "dist/index.js",
   "scripts": {

@@ -72,8 +72,8 @@ class SimpleReactCropper extends React.Component<IPropsSimpleReactCropper, { src
 
   render() {
     return (
-      <div className="container">
-        <div className="container-img" style={this.props.containerStyle}>
+      <div className="container_simple-react-cropper">
+        <div className="container-img_simple-react-cropper" style={this.props.containerStyle}>
           <img ref={node => (this.img = node)} id="avatar_img" src={this.state.src} />
         </div>
         <div
@@ -87,12 +87,12 @@ class SimpleReactCropper extends React.Component<IPropsSimpleReactCropper, { src
             type="file"
             id="origin-image"
             name="origin-image"
-            className="input-file"
+            className="input-file_simple-react-cropper"
             onChange={this._handleFileChange}
           />
           <label htmlFor="origin-image">Choose a file</label>
 
-          <button className="button-save" onClick={this._uploadToServer}>
+          <button className="button-save_simple-react-cropper" onClick={this._uploadToServer}>
             Save
           </button>
         </div>
