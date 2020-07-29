@@ -1,14 +1,14 @@
-.container {
+.container_simple-react-cropper {
   background-color: white;
   padding: 1rem;
 }
 
-.container-img {
+.container-img_simple-react-cropper {
   width: 100%;
   text-align: center;
 }
 
-.input-file {
+.input-file_simple-react-cropper {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -17,7 +17,7 @@
   z-index: -1;
 }
 
-.input-file + label {
+.input-file_simple-react-cropper + label {
   font-size: 1em;
   margin: 0px;
   padding: 10px 20px 10px 20px;
@@ -28,12 +28,12 @@
   border-bottom: 3px solid #5490a8;
 }
 
-.input-file + label:hover {
+.input-file_simple-react-cropper + label:hover {
   background-color: #5490a8;
   cursor: pointer;
 }
 
-.button-save {
+.button-save_simple-react-cropper {
   font-size: 1em;
   padding: 10px 20px 10px 20px;
   color: white;
